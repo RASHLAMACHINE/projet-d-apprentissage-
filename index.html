@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="styles.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+		<title>Site du Projet</title>
+	</head>
+	<body>
+		<div class="container">
+			<header class="titre">
+				<div>
+					<img src="images/Logo 4.jpg" alt="Mon logo" />
+				</div>
+				<div>
+					<h3><i class="fa-solid fa-phone"></i>&nbsp;Contact:0779290005</h3>
+				</div>
+			</header>
+			<section class="carrousel">
+				<div class="images">
+					<img class="slider-item" src="images/Logo 2.jpg" />
+					<img class="slider-item" src="images\Logo 8.jpg" />
+					<img class="slider-item" src="images/Logo 6.jpg" />
+				</div>
+				<div class="fleches">
+					<span><i id="gauche" class="fa-solid fa-angle-left fa-2xl"></i></span>
+					<span><i id="droite" class="fa-solid fa-angle-right fa-2xl"></i></span>
+				</div>
+			</section>
+			<nav>
+				<div id="toggle-btn">
+					<i class="fa-solid fa-bars fa-xl"></i>
+				</div>
+				<ul id="ulref">
+					<li>Accueil</li>
+					<li>Inscription</li>
+					<li>Connexion</li>
+					<li>Messager</li>
+					<li>Plateformes</li>
+					<li>Profil</li>
+				</ul>
+			</nav>
+			<section class="articles">
+				<article class="un">
+					<h5>Suggestions de la semaine :</h5><br/>
+					<p><b>- ENTREES</b></p>
+					<p>Tartare de sashimi de ton rouge façon Thaï, mangue, coriandre, sésame et salade de wakamé: 16,80€</p>
+					<p>Coeur de ris de veau rôti, poêlée de légumes de saison, réduction aux éclats de morilles: 18,50€</p><br/>
+					<p><b>- PLATS</b></p>
+					<p>Entrecôte de boeuf «Hereford», +/-300gr, frites, salade, sauce au choix: 30,00€</p>
+					<p>Coquelet rôti sur l’os, Rösti de pommes de terre, haricots verts lardés, jus crémé à l’estragon: 23,90€</p><br/>
+					<p><b>- DESSERT</b></p>
+					<P>Crêpes façon «Suzette» à la mandarine, glace à la vanille de Madagascar: 9,00€</p>
+				</article>
+				<article class="deux">
+					<h4>Nous vous proposons un menu 3 services au choix</h4><br/>
+					<p>Celui-ci varie selon le marché et les saisons, il peut changer quotidiennement comme hebdomadairement</p>
+					<p>Dégustez des plats savoureux dans un cadre exceptionnel ! Cuisine raffinée. Service haut de gamme. </p>
+					<p>Tous les ingrédients sont frais et soigneusement choisis par notre chef.</p>
+					<p>En espérant que vous prendrez du plaisir à manger chez nous.</p><br/>
+					<p>Ne ratez pas l'occasion des meilleurs tables.</p>
+					<button class="bouton"><i class="fa-solid fa-file-alt fa-xl"></i>&nbsp;VALIDEZ</button>
+				</article>
+			</section>
+			<section class="temoignages">
+				<h2>Ce que le site nous reserve</h2>
+				<div class="temoignage_card">
+					<div class="card">
+						<h5 class="name">Presi Amors M.</h5>
+						<p>ton avie sur mon site vas me fait palisie</p>
+					</div>
+					<div class="card">
+						<h5 class="name">Koime D.</h5>
+						<p>Très bon,ton site je suis vraiment satisfait de ton site !.</p>
+					</div>
+					<div class="card">
+						<h5 class="name">oceane C</h5>
+						<p>le chef a encore ravi nos papilles! Que ca soit par le forfait vin, avec un serveur très conciliant selon les goûts, que par le menu 3 services</p>
+					</div>
+					<div class="card">
+						<h5 class="name">Linda F.</h5>
+						<p>Très bon, service rapide et super bon, rien à redire. </p>
+					</div>
+					<div class="card">
+						<h5 class="name">Docteur Dibi H.</h5>
+						<p>je suis vraiment fiert de ton travail abattue</p>
+					</div>
+					<div class="card">
+						<h5 class="name">GRd Arnaud G.</h5>
+						<p>Un petit lunch entre amis avec un délicieux poisson en plat, un vin blanc conseillé par le patron, à refaire dès que possible.....</p>
+					</div>
+				</div>
+				<button>Plus de témoignages Clients ici</button>
+			</section>
+			<footer>
+				<p>Le site Du projet.be Numéro de l'un des developpeurs du site : 0779290005.tel: 24/05.2024</p>
+			</footer>
+		</div>
+		<script>
+			// Menu Hamburger
+			const btn = document.querySelector('#toggle-btn');
+			const ul  = document.getElementById('ulref');
+
+			btn.onclick = ()=> ul.style.opacity == 0 ? ul.style.opacity = 1 : ul.style.opacity = 0;
+
+			// carrousel
+			const carrousel_content = document.querySelector('.images');
+			const prev = document.getElementById('gauche');
+			const next = document.getElementById('droite');
+			let translate = 0;
+
+			prev.onclick = ()=>{
+				translate += 100;
+				if(translate > 0)
+					translate = 0;
+				carrousel_content.style.transform = 'translateX(' + translate +'%)';
+			}
+			next.onclick = ()=>{
+				translate -= 100;
+				if(translate < -200)
+					translate = -200;
+				carrousel_content.style.transform = 'translateX(' + translate +'%)';
+			}
+		</script>
+	</body>
+</html>
